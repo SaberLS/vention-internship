@@ -44,6 +44,10 @@ class Crew {
 
     return header + "\n" + formattedMembers;
   }
+
+  getSize() {
+    return this.#members.length;
+  }
 }
 
 export { Crew };
