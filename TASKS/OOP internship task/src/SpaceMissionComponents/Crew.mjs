@@ -46,7 +46,7 @@ class Crew {
   }
 
   toString() {
-    return `MaxSize: ${this.maxSize} | Size: ${this.crew.getSize()} | Ready: ${this.isReady() ? "Yes" : "No"}`;
+    return `MaxSize: ${this.maxSize} | Size: ${this.getSize()} | Ready: ${this.isReady() ? "Yes" : "No"}`;
   }
 
   getSize() {
