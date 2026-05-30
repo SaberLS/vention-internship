@@ -17,7 +17,8 @@ class Crew {
    * @param {CrewMember} newMember
    */
   addMember(newMember) {
-    if (this.#members.length >= this.maxSize) throw new Error("Crew is full");
+    if (this.#members.length >= this.maxSize)
+      throw new Error("Crew maxSize exceded");
 
     this.#members.push(newMember);
   }
