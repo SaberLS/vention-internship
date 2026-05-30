@@ -10,8 +10,8 @@ class CrewedMission extends Mission {
    * @param {import('../SpaceMissionComponents/Rocket.mjs').Rocket} rocket
    * @param {number} payloadKg
    */
-  constructor(name, rocket, payloadKgcrew, crew) {
-    super(name, rocket, payloadKgcrew);
+  constructor(name, rocket, payloadKg, crew) {
+    super(name, rocket, payloadKg);
 
     this.crew = crew;
   }
