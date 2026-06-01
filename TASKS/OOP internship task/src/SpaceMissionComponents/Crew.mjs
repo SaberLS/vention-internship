@@ -31,7 +31,17 @@ class Crew {
   }
 
   isReady() {
-    return this.hasCommander();
+    try {
+      this.validate();
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  validate() {
+    if (this.getSize() === 0) throw new Error("Not enough crew members!");
+    if (!this.hasCommander()) throw new Error("No Commander assigned!");
   }
 
   getManifest() {
