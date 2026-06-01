@@ -1,6 +1,12 @@
 /**
- * @typedef {'planned' | 'success' | 'failed'} MissionStatus
+ * @typedef {'success' | 'failed'} MissionResult
  */
+
+/**
+ * @typedef {'planned' | MissionResult} MissionStatus
+ */
+
+/** @typedef {'planned' | `launched → ${MissionResult}`} LogEvent*/
 
 /**
  *
@@ -23,7 +29,7 @@ const formatLogDate = (date) =>
 class Mission {
   /** @type {MissionStatus} */
   #status;
-  /** @type {{event: MissionStatus, timestamp: number}[]} */
+  /** @type {{event: LogEvent, timestamp: number}[]} */
   #log = [];
   id;
   name;
@@ -39,7 +45,8 @@ class Mission {
    */
   constructor(name, rocket, payloadKg) {
     this.id = Mission.generateId();
-    this.#setStatus("planned");
+    this.#status = "planned";
+    this.#addLog("planned");
 
     this.name = name;
     this.rocket = rocket;
@@ -64,19 +71,14 @@ class Mission {
 
   launch() {
     this.validate();
+
     this.rocket.consumeFuel(80);
+    const missionResult = Math.random() >= 0.7 ? "success" : "failed";
 
-    const successfull = Math.random() > 0.3;
+    this.#addLog(`launched → ${missionResult}`);
+    this.#status = missionResult;
 
-    const commonPart = `${this.id} ${this.name}`;
-
-    if (successfull) {
-      this.#setStatus("success");
-      return `${commonPart} launched successfully!`;
-    }
-
-    this.#setStatus("failed");
-    return `${commonPart} failed on launch.`;
+    return `${this.id} ${this.name} ${missionResult === "success" ? "launched successfully!" : "failed on launch."}`;
   }
 
   toString() {
@@ -85,14 +87,13 @@ class Mission {
 
   /**
    *
-   * @param {MissionStatus} newStatus
+   * @param {LogEvent} event
    */
-  #setStatus(newStatus) {
+  #addLog(event) {
     this.#log.push({
-      event: newStatus === "planned" ? "planned" : `launched → ${newStatus}`,
+      event,
       timestamp: Date.now(),
     });
-    this.#status = this.#status;
   }
 
   getLog() {
