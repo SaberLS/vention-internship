@@ -26,9 +26,10 @@ class Rocket {
   /**
    *
    * @param {number} amount
-   * @returns {void | never}
+   * @returns {void}
    */
   consumeFuel(amount) {
+    if (amount < 0) throw new Error(`Rocket can't consume ${amount} of fuel`);
     this.#fuelLevel -= amount;
 
     if (this.#fuelLevel < 0)
