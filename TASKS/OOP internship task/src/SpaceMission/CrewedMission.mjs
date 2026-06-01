@@ -19,7 +19,14 @@ class CrewedMission extends Mission {
   validate() {
     super.validate();
 
-    if (!this.crew.isReady()) throw new Error("Crew is not ready!");
+    try {
+      this.crew.validate();
+    } catch (error) {
+      if ("message" in error && typeof error.message === "string")
+        throw new Error(`Crew is not ready: ${error.message}`);
+
+      throw new Error(`Unknown crew error`, { cause: error });
+    }
   }
 
   toString() {
