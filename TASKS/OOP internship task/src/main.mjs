@@ -8,26 +8,17 @@ bigCrew.addMember({ name: "Bob", role: "Flight Engineer" });
 bigCrew.addMember({ name: "Another Bob", role: "Flight Engineer" });
 bigCrew.addMember({ name: "Jim Voss", role: "Pilot" });
 
-console.log(bigCrew.getManifest());
-console.log(bigCrew.isReady()); // true
-
 // --- SMALL CREW ---
 const smallCrew = new Crew(1);
 smallCrew.addMember({ name: "Eileen Collins", role: "Commander" });
-
-console.log(smallCrew.isReady()); // true
 
 // --- BAD CREW (no commander) ---
 const badCrew = new Crew(3);
 badCrew.addMember({ name: "Bob", role: "Pilot" });
 
-console.log(badCrew.isReady()); // false
-
 // --- ROCKETS ---
 const falcon9 = new Rocket("Falcon 9", 5000, true);
 const slsBlock1 = new Rocket("SLS Block 1", 30000, false);
-
-console.log(falcon9.toString());
 
 // --- MISSIONS ---
 const artemisI = new CrewedMission("Artemis I", slsBlock1, 27000, badCrew);
@@ -40,11 +31,25 @@ const crewDragon = new CrewedMission(
 );
 
 // --- LAUNCH SIMULATION ---
-console.log(polarisDawn.toString());
-console.log(polarisDawn.launch());
+launchMission(polarisDawn);
+launchMission(artemisI);
+launchMission(crewDragon);
 
-console.log(artemisI.toString());
-// this one may throw if crew is invalid or rocket not ready
-
-// --- LOG EXAMPLE ---
-console.log(polarisDawn.getLog());
+/**
+ *
+ * @param {import("./SpaceMission/CrewedMission.mjs").CrewedMission} mission
+ */
+function launchMission(mission) {
+  console.log("==============================");
+  console.log("Attempting to launch: ", mission.toString());
+  console.log("Rocket: ", mission.rocket.toString());
+  console.log(mission.crew.getManifest());
+  try {
+    console.log(mission.launch());
+  } catch (error) {
+    console.log("Error: ", error.message);
+  } finally {
+    console.log("Log: ", mission.getLog());
+  }
+  console.log("==============================");
+}
