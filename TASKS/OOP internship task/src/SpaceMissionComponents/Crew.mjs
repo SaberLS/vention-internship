@@ -20,6 +20,12 @@ class Crew {
     if (this.#members.length >= this.maxSize)
       throw new Error("Crew maxSize exceded");
 
+    if (
+      typeof newMember?.name !== "string" ||
+      typeof newMember?.role !== "string"
+    )
+      throw new Error("Wrong data type, expected {name: string, role: string}");
+
     this.#members.push(newMember);
   }
 
