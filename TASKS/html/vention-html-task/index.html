@@ -19,7 +19,10 @@
       rel="stylesheet"
       href="./src/styles/header.css"
     />
-
+    <link
+      rel="stylesheet"
+      href="./src/styles/side-bar.css"
+    />
     <title>vention-html-task</title>
   </head>
   <body>
@@ -34,6 +37,53 @@
         </p>
       </div>
     </header>
+
+    <!-- Toggle Sidebar -->
+    <button
+      id="menu-toggle"
+      aria-label="Open Menu"
+    >
+      <svg
+        viewBox="0 0 488 488"
+        id="toggle-icon"
+      >
+        <use xlink:href="./src/assets/svg-spreedsheet.svg#burger-menu"></use>
+      </svg>
+    </button>
+
+    <!-- Sidebar -->
+    <nav
+      class="side-menu"
+      id="side-menu"
+    >
+      <div class="side-menu-header"></div>
+      <ul class="side-menu-links">
+        <li>
+          <a
+            href="#"
+            class="menu-link active"
+            data-target="clients"
+            >Clients</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="menu-link"
+            data-target="products"
+            >Products</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="menu-link"
+            data-target="feedback"
+            >Feedback</a
+          >
+        </li>
+      </ul>
+    </nav>
 
     <script
       type="module"
