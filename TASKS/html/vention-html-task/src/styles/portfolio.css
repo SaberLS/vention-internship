@@ -76,3 +76,23 @@ article.grid-card-content {
   text-align: center;
   color: var(--color-red);
 }
+
+/* Tablet: 768px - 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, var(--card-fixed-width));
+  }
+}
+
+/* Mobile: 767px and below */
+@media screen and (max-width: 767px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .product-card-img {
+    max-width: 200px;
+    height: 300px;
+    object-fit: contain;
+  }
+}
