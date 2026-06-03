@@ -27,6 +27,10 @@
       rel="stylesheet"
       href="./src/styles/navbar.css"
     />
+    <link
+      rel="stylesheet"
+      href="./src/styles/portfolio.css"
+    />
     <title>vention-html-task</title>
   </head>
   <body>
@@ -121,9 +125,17 @@
       </div>
     </nav>
 
+    <!-- THIS section will update depending what is chosen in navbar eg. selecting Clients will display only client cards example with rick sanchez -->
+    <main class="portfolio-section">
+      <ul
+        class="portfolio-grid"
+        id="portfolio-grid"
+      ></ul>
+    </main>
+
     <script
       type="module"
-      src="/src/main.js"
+      src="./src/main.js"
     ></script>
   </body>
 </html>
