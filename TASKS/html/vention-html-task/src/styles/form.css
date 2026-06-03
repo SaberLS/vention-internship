@@ -1,0 +1,94 @@
+.newsletter {
+  width: 100%;
+  padding: 20px;
+  background: #f2f2f2;
+}
+
+.newsletter-title {
+  margin-bottom: 20px;
+  font-size: var(--font-size-title);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.form-field input {
+  width: 100%;
+  max-width: 300px;
+  height: 32px;
+  padding: 0 8px;
+  border: none;
+  background: #fff;
+}
+
+.form-field input:focus {
+  outline: 2px solid #999;
+  outline-offset: 2px;
+}
+
+.error-message {
+  margin-top: 10px;
+  color: #ff4d4d;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-checkbox label {
+  color: #444;
+}
+
+.subscribe-button {
+  align-self: flex-start;
+  padding: 8px 18px;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  cursor: pointer;
+}
+
+.subscribe-button:hover {
+  opacity: 0.9;
+}
+
+.subscribe-button:focus {
+  outline: 2px solid #999;
+  outline-offset: 2px;
+}
+
+#success-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+
+  padding: 24px;
+  border: none;
+  border-radius: 8px;
+}
+
+#success-dialog::backdrop {
+  background: rgb(0 0 0 / 40%);
+}
+
+#success-dialog button {
+  cursor: pointer;
+}

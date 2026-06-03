@@ -31,6 +31,10 @@
       rel="stylesheet"
       href="./src/styles/portfolio.css"
     />
+    <link
+      rel="stylesheet"
+      href="./src/styles/form.css"
+    />
     <title>vention-html-task</title>
   </head>
   <body>
@@ -125,7 +129,6 @@
       </div>
     </nav>
 
-    <!-- THIS section will update depending what is chosen in navbar eg. selecting Clients will display only client cards example with rick sanchez -->
     <main class="portfolio-section">
       <ul
         class="portfolio-grid"
@@ -133,9 +136,84 @@
       ></ul>
     </main>
 
+    <section class="newsletter">
+      <h2 class="newsletter-title">I WANT TO GET FRESH UPDATES</h2>
+
+      <form class="newsletter-form">
+        <div class="form-field">
+          <label for="first-name"> First Name: </label>
+
+          <input
+            id="first-name"
+            name="firstName"
+            type="text"
+            aria-describedby="first-name-error"
+            aria-invalid="true"
+            required
+          />
+
+          <p
+            id="first-name-error"
+            class="error-message"
+          >
+            Please enter your first name.
+          </p>
+        </div>
+
+        <div class="form-field">
+          <label for="email"> Email: </label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+          />
+        </div>
+
+        <div class="form-checkbox">
+          <input
+            id="consent"
+            name="consent"
+            type="checkbox"
+            required
+          />
+
+          <label for="consent">
+            I consent to the processing of personal data
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          class="subscribe-button"
+        >
+          Subscribe
+        </button>
+      </form>
+    </section>
+
+    <dialog id="success-dialog">
+      <h2>Form submitted successfully!</h2>
+
+      <p id="dialog-name"></p>
+      <p id="dialog-email"></p>
+
+      <button
+        type="button"
+        id="close-dialog"
+      >
+        Close
+      </button>
+    </dialog>
+
     <script
       type="module"
       src="./src/main.js"
+    ></script>
+    <script
+      type="module"
+      src="./src/scripts/form.js"
     ></script>
   </body>
 </html>
