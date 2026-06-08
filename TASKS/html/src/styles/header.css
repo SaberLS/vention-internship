@@ -1,0 +1,36 @@
+/* Hero Section with Dark Linear Overlay Tint */
+.hero-header {
+  width: 100%;
+  height: 350px;
+
+  /* gradient over background image */
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../assets/header-background.png");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin-bottom: 50px;
+}
+
+/* Text Container */
+.hero-text-container {
+  color: var(--color-white);
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: var(--font-size-main-heading);
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.hero-subtitle {
+  font-size: var(--font-size-text);
+  font-weight: 400;
+}

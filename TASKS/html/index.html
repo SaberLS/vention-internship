@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/styles/main.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/styles/header.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/styles/side-bar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/styles/navbar.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/styles/portfolio.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/styles/form.css"
+    />
+    <title>vention-html-task</title>
+  </head>
+  <body>
+    <!-- Header Banner -->
+    <header class="hero-header">
+      <!-- Hero Text -->
+      <div class="hero-text-container">
+        <h1 class="hero-title">Let Make Something Great</h1>
+        <p class="hero-subtitle">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit,
+          incidunt?
+        </p>
+      </div>
+    </header>
+
+    <!-- Toggle Sidebar -->
+    <button
+      id="menu-toggle"
+      aria-label="Open Menu"
+    >
+      <svg
+        viewBox="0 0 488 488"
+        id="toggle-icon"
+      >
+        <use xlink:href="./src/assets/svg-spreedsheet.svg#burger-menu"></use>
+      </svg>
+    </button>
+
+    <!-- Sidebar -->
+    <nav
+      class="side-menu"
+      id="side-menu"
+    >
+      <div class="side-menu-header"></div>
+      <ul class="side-menu-links">
+        <li>
+          <a
+            href="#"
+            class="menu-link active"
+            data-target="clients"
+            >Clients</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="menu-link"
+            data-target="products"
+            >Products</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="menu-link"
+            data-target="feedback"
+            >Feedback</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <ul class="desktop-nav-links">
+          <li>
+            <a
+              href="#"
+              class="nav-tab active"
+              data-target="clients"
+              >Clients</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-tab"
+              data-target="products"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="nav-tab"
+              data-target="feedback"
+              >Feedback</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="portfolio-section">
+      <ul
+        class="portfolio-grid"
+        id="portfolio-grid"
+      ></ul>
+    </main>
+
+    <section class="newsletter">
+      <h2 class="newsletter-title">I WANT TO GET FRESH UPDATES</h2>
+
+      <form class="newsletter-form">
+        <div class="form-field">
+          <label for="first-name"> First Name: </label>
+
+          <input
+            id="first-name"
+            name="firstName"
+            type="text"
+            aria-describedby="first-name-error"
+            aria-invalid="true"
+            required
+          />
+
+          <p
+            id="first-name-error"
+            class="error-message"
+          >
+            Please enter your first name.
+          </p>
+        </div>
+
+        <div class="form-field">
+          <label for="email"> Email: </label>
+
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+          />
+        </div>
+
+        <div class="form-checkbox">
+          <input
+            id="consent"
+            name="consent"
+            type="checkbox"
+            required
+          />
+
+          <label for="consent">
+            I consent to the processing of personal data
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          class="subscribe-button"
+        >
+          Subscribe
+        </button>
+      </form>
+    </section>
+
+    <dialog id="success-dialog">
+      <h2>Form submitted successfully!</h2>
+
+      <p id="dialog-name"></p>
+      <p id="dialog-email"></p>
+
+      <button
+        type="button"
+        id="close-dialog"
+      >
+        Close
+      </button>
+    </dialog>
+
+    <script
+      type="module"
+      src="./src/main.js"
+    ></script>
+    <script
+      type="module"
+      src="./src/scripts/form.js"
+    ></script>
+  </body>
+</html>

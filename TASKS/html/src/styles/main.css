@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --font-family: "Raleway", sans-serif;
+  --color-red: #fb6470;
+  --color-dark: #353541;
+  --color-white: #fff;
+  --color-blue: #0093b5;
+  --font-size-text: 16px;
+  --font-size-title: 24px;
+  --font-size-heading: 32px;
+  --font-size-main-heading: 48px;
+}
+
+/* Base Resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-text);
+}
